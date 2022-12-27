@@ -1,0 +1,6 @@
+HTML- 웹의 구조
+CSS - 디자인
+javascript - 웹의 거의 모든 것을 담당
+
+console 창에 document.head.parentNode.removeChild(document.head)을 치면 모든 CSS 파일을 날릴 수 있음.
+단 웹 페이지 일부가 웹페이지를 자체적으로 띄우는 경우는 제외
