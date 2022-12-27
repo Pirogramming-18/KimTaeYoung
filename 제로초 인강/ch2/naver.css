@@ -1,0 +1,5 @@
+#header-center {
+	/* div는 생략 가능 */
+	margin: 0 auto;
+	width: 1080px;
+}
