@@ -29,7 +29,7 @@ body {
 	height: 1px;
 }
 
-#header-center {
+.center-align {
 	margin: 0 auto;
 	width: 1080px;
 }
@@ -105,8 +105,46 @@ body {
 	margin: 14px;
 }
 
-/* position에서 relative와 absolute의 차이점 
-relative- 원래 자신의 static postion을 기반으로 위치를 정함
-absolute- 자신의 조상 태그 중 static이 아닌 가장 가까운 조상의 여백에 기반함 
-가운데 정렬은 하나의 방법을 익혀놓는 게 좋다
-*/
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav li {
+	display: inline-block;
+}
+
+nav li span:first-child {
+	display: inline-block;
+	height: 16px;
+	background-image: url(./sp_nav.png);
+	background-repeat: no-repeat;
+}
+
+nav li:first-child span:first-child {
+	width: 25px;
+	background-position: 0 -285px;
+}
+nav li:nth-child(2) span:first-child {
+	width: 27px;
+	background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+	width: 40px;
+	background-position: -100px -182px;
+}
+
+/* nav li:nth-child(4) span:first-child {
+	width: 27px;
+	background-position: -279px -52px;
+}
+nav li:nth-child(5) span:first-child {
+	width: 27px;
+	background-position: -279px -52px;
+}
+nav li:nth-child(6) span:first-child {
+	width: 27px;
+	background-position: -279px -52px;
+} */
