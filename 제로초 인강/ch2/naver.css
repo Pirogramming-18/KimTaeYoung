@@ -154,4 +154,16 @@ nav li:nth-child(6) span:first-child {
 	background-position: -70px -285px;
 }
 
-/* 블록 서식 맥락은 부모 태그가 자식 태그를 감쌀 수 있는 경우를 뜻함*/
+#header-top {
+	float: right;
+}
+#header-top span {
+	color: #888;
+	letter-spacing: -1px;
+	font-size: 11x;
+	line-height: 22px;
+}
+
+#header-search {
+	clear: both;
+}
