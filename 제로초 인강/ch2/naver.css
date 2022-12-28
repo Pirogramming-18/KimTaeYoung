@@ -382,7 +382,7 @@ main {
 
 #main-newsstand li {
 	float: left;
-	width: 123px;
+	width: calc(100% / 6);
 	height: 67px;
 	border-right: 1px solid #f1f3f6;
 	border-bottom: 1px solid #f1f3f6;
@@ -450,10 +450,6 @@ main {
 	background: #555;
 }
 
-/* 모든 자식이 inline-block을 쓸 필요 없이 부모를 inline-block으로 두고 자식을 float: left로 두면 같은 결과가 나타남*/
-/* inline-block은 자주 사용하기 때문에 클래스로 만들어 두는 것도 좋음. */
-/* 먼저 가로로 나눈 다음 세로로 나눌 때 inline-block 사용 */
-/* 콤마를 여러개 찍을 때 특정 클래스나 아이디의 자손을 선택하는 경우 여러 번 써줘야됨 ex) #main p, #main span*/
-/* 높낮이가 같은 블록의 경우 float left만 해줘도 가능 */
-/* 자식의 요소 수평 정렬은 text-align: center로 가능 */
-/* 수직 정렬은  */
+#main-newsstand ul {
+	display: inline-block;
+}
