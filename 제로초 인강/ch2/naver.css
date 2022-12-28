@@ -1,48 +1,57 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Cascading Style Sheet */
+/* 선택자(selector) */
+.blind {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	width: 1px;
+	height: 1px;
+}
+
 #header-center {
-	/* div는 생략 가능 */
 	margin: 0 auto;
 	width: 1080px;
-	/* 너비 */
+}
+
+#header-search a {
+	text-decoration: none;
 }
 
 #header-search h1 {
+	width: 198px;
+	height: 48px;
 	display: inline-block;
-	width: 227px;
-	height: 49px;
-	background-repeat: no-repeat;
-	background-position: 3px -161px;
-	background-image: url(naver_logo.png);
-	background-size: 442px 428px;
-	text-indent: 10%;
-	overflow: hidden;
-}
-
-#header-search fieldset {
-	width: 520px;
-	display: inline-block;
-	height: 49px;
-	margin-left: 20px;
-	padding: 12 0 12 0;
-	border: 2px solid #03cf5d;
-}
-
-.blind {
-	position: absolute;
-	clip: rect(0 0 0 0);
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
+	/*background-image: url(./sp_search.png);*/
+	/*background-position: -4px -10px;*/
+	/*background-repeat: no-repeat;*/
+	background: url(./naver_logo.png) -4px -4px no-repeat;
+	vertical-align: middle;
 }
 
 #header-search h1 span {
 	display: none;
 }
+
 #header-search h2 {
 	display: none;
 }
-#header-search a {
-	text-decoration: none;
-}
 
-/* #header-center h1 {} 자손 */
+#header-search fieldset {
+	margin-left: 20px;
+	/*padding-top: 12px;*/
+	/*padding-bottom: 12px;*/
+	/*padding-left: 10px;*/
+	/*padding-right: 0;*/
+	padding: 12px 0 12px 10px;
+	width: 521px;
+	height: 49px;
+	display: inline-block;
+	border: 2px solid #03cf5d; /* hex */
+	vertical-align: middle;
+	position: relative;
+}
