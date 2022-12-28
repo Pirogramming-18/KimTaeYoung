@@ -49,7 +49,7 @@ header a {
 	top: 0px;
 	right: 0px;
 	margin-left: 260px;
-	width: 300px;
+	width: 456px;
 	margin-top: 40px;
 }
 
@@ -146,5 +146,25 @@ footer {
 footer img {
 	position: relative;
 	top: -37px;
-	right: -500px;
+	left: 700px;
+}
+
+#search-button {
+	position: relative;
+	top: 0;
+	right: 150px;
+	border-radius: 4px;
+	border: 1px solid;
+	padding: 0px 5px 5px 5px;
+}
+
+.list img {
+	position: absolute;
+	top: -19px;
+	left: 20px;
+}
+.list ul {
+	position: absolute;
+	top: 28px;
+	left: 34px;
 }
