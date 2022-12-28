@@ -24,16 +24,21 @@
 						</h1>
 					</a>
 					<h2 class="blind">검색창</h2>
-					<fieldset>
-						<legend class="blind">검색</legend>
-						<input />
-						<span id="search-keyboard"></span>
-						<span id="search-history"></span>
-						<button>
-							<span class="blind">검색</span>
-							<span id="search-image"></span>
-						</button>
-					</fieldset>
+					<form
+						class="inline-block"
+						action="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="
+					>
+						<fieldset>
+							<legend class="blind">검색</legend>
+							<input />
+							<span id="search-keyboard"></span>
+							<span id="search-history"></span>
+							<button type="submit">
+								<span class="blind">검색</span>
+								<span id="search-image"></span>
+							</button>
+						</fieldset>
+					</form>
 				</div>
 			</div>
 		</header>
@@ -41,60 +46,52 @@
 			<div class="center-align relative">
 				<div id="search-ranking">
 					<h2 class="blind">실시간 검색어</h2>
-					<span id="rank-number">1</span>
-					<span id="rank-title">제로초</span>
+					<div>
+						<span id="rank-number">1</span>
+						<span id="rank-title">제로초</span>
+					</div>
 					<ul>
-						<div id = "ranking-head">
-
-							<div id = "ranking-head">급상승 검색어</div>
-							<div id = "ranking-head2">전체 연령 ㅣ 현재</div>
-							
-						</div>
-						<div id="divide-ranking">
-							<div>1위-10위</div>
-							<div>11위-20위</div>
-						</div>
-						<div id="real-ranking">
-
-							<li>
-								<span id="rank-number">1</span>
-								<span id="rank-title">제로초</span>
-							</li>
-							<li>
-								<span class="rank-number">2</span>
-								<span id="rank-title">제로초</span>
-							</li>
-							<li>
+						<li>
+							<span class="rank-number">1</span>
+							<span class="rank-title">제로초</span>
+						</li>
+						<li>
+							<span class="rank-number">2</span>
+							<span class="rank-title">제로초</span>
+						</li>
+						<li>
 							<span class="rank-number">3</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">4</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">5</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">6</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
+						</li>
+						<li>
+							<span class="rank-number">7</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">8</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">9</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 						<li>
 							<span class="rank-number">10</span>
-							<span id="rank-title">제로초</span>
+							<span class="rank-title">제로초</span>
 						</li>
 					</ul>
-				</div>
-				<div id ="ranking-etc"></div>
 				</div>
 				<ul id="nav-menu">
 					<!-- unordered list -->
@@ -181,11 +178,27 @@
 				<div id="main-first-block">
 					<div id="main-ad"></div>
 					<div id="main-login">
-						<h3>로그인</h3>
+						<h3 class="blind">로그인</h3>
+						<div class="login-wrapper">
+							<span class="login-text"
+								>네이버를 더 안전하고 편리하게 이용하세요.</span
+							>
+							<a
+								href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com"
+							>
+								<span class="blind">NAVER 로그인</span>
+								<span class="login-image"></span>
+							</a>
+							<a
+								class="login-signup"
+								href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com"
+								>회원가입</a
+							>
+						</div>
 					</div>
 				</div>
 				<div id="main-second-block">
-					<div class="inline-block">
+					<div class="float-left">
 						<div id="main-ytn">
 							<h3>연합뉴스</h3>
 							<ol>
@@ -216,7 +229,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="inline-block">
+					<div class="float-left">
 						<div id="main-weather"></div>
 						<div id="main-second-ad"></div>
 					</div>
@@ -227,8 +240,9 @@
 					</div>
 					<div id="main-shopping">
 						<iframe
-							src="/shoppingbox/shoppingboxnew/main.nhn?mode=plusdeal&domain=N"
+							src="https://castbox.shopping.naver.com/shopbox/main.nhn?"
 							frameborder="0"
+							scrolling="no"
 						></iframe>
 					</div>
 				</div>
