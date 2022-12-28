@@ -88,3 +88,8 @@
 	display: inline-block;
 	margin: 14px;
 }
+
+/* position에서 relative와 absolute의 차이점 
+relative- 원래 자신의 static postion을 기반으로 위치를 정함
+absolute- 자신의 조상 태그 중 static이 아닌 가장 가까운 조상의 여백에 기반함 
+*/
