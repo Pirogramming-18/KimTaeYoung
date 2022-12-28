@@ -312,6 +312,8 @@ main {
 	width: 740px;
 	height: 120px;
 	background-color: black;
+	margin-right: 8px;
+	margin-bottom: 8px;
 }
 
 #main-login {
@@ -326,12 +328,16 @@ main {
 	display: inline-block;
 	width: 740px;
 	height: 46px;
+	margin-right: 8px;
+	margin-bottom: 8px;
 }
 
 #main-newsstand {
 	display: inline-block;
 	width: 740px;
 	height: 246px;
+	margin-right: 8px;
+	margin-bottom: 8px;
 }
 
 #main-weather {
@@ -353,6 +359,8 @@ main {
 	width: 740px;
 	height: 837px;
 	background: red;
+	margin-right: 8px;
+	margin-bottom: 8px;
 }
 #main-shopping {
 	display: inline-block;
@@ -367,6 +375,8 @@ main {
 	height: 130px;
 	background: #ccc;
 	vertical-align: top;
+	margin-right: 8px;
+	margin-bottom: 8px;
 }
 #main-third-ad {
 	display: inline-block;
@@ -374,3 +384,7 @@ main {
 	height: 130px;
 	background: #ccc;
 }
+
+/* 인라인 블록 간에는 코드 상 엔터 간격이 반영됨 */
+/* float의 경우 부모가 블록 컨텍스트인 경우 감싸짐
+ex) 부모가 overflow: auto인 경우 */
