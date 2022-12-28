@@ -5,18 +5,23 @@
 	/* 너비 */
 }
 
-#header-search > h1 {
+#header-search h1 {
 	width: 280px;
 	display: inline-block;
-}
-
-div#header-search h2 {
-	display: none;
 }
 
 #header-search fieldset {
 	width: 520px;
 	display: inline-block;
+}
+
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
 }
 
 /* #header-center h1 {} 자손 */
