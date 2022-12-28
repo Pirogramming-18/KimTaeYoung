@@ -300,3 +300,14 @@ nav li.more:first-child span:first-child {
 	margin: 0 6px;
 	vertical-align: middle;
 }
+
+main {
+	background-color:gainsboro;
+	display:inline-block;
+	width:100%;
+}
+
+
+/* 마진 겹침 해결법
+1. flat: left width:100%
+2. display: inline-block width: 100%<- 어떠한 경우에도 가능/
