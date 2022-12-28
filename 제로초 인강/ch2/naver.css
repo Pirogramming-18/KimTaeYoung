@@ -6,13 +6,24 @@
 }
 
 #header-search h1 {
-	width: 280px;
 	display: inline-block;
+	width: 227px;
+	height: 49px;
+	background-repeat: no-repeat;
+	background-position: 3px -161px;
+	background-image: url(naver_logo.png);
+	background-size: 442px 428px;
+	text-indent: 10%;
+	overflow: hidden;
 }
 
 #header-search fieldset {
 	width: 520px;
 	display: inline-block;
+	height: 49px;
+	margin-left: 20px;
+	padding: 12 0 12 0;
+	border: 2px solid #03cf5d;
 }
 
 .blind {
@@ -22,6 +33,16 @@
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
+}
+
+#header-search h1 span {
+	display: none;
+}
+#header-search h2 {
+	display: none;
+}
+#header-search a {
+	text-decoration: none;
 }
 
 /* #header-center h1 {} 자손 */
