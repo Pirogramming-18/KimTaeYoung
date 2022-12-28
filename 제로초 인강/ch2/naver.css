@@ -115,17 +115,20 @@ nav li {
 	display: inline-block;
 }
 
+nav li:first-child span:first-child {
+	width: 25px;
+	background-position: 0 -285px;
+	margin-left: 0;
+}
+
 nav li span:first-child {
 	display: inline-block;
 	height: 16px;
 	background-image: url(./sp_nav.png);
 	background-repeat: no-repeat;
+	margin-left: 14px;
 }
 
-nav li:first-child span:first-child {
-	width: 25px;
-	background-position: 0 -285px;
-}
 nav li:nth-child(2) span:first-child {
 	width: 27px;
 	background-position: -279px -52px;
@@ -136,15 +139,22 @@ nav li:nth-child(3) span:first-child {
 	background-position: -100px -182px;
 }
 
-/* nav li:nth-child(4) span:first-child {
-	width: 27px;
-	background-position: -279px -52px;
+nav li:nth-child(4) span:first-child {
+	width: 40px;
+	background-position: -101px -156px;
 }
+
 nav li:nth-child(5) span:first-child {
-	width: 27px;
-	background-position: -279px -52px;
+	width: 26px;
+	background-position: -279px -156px;
 }
+
 nav li:nth-child(6) span:first-child {
-	width: 27px;
-	background-position: -279px -52px;
-} */
+	width: 25px;
+	background-position: -70px -285px;
+}
+
+/* css 선택자 우선순위
+	id > class > 일반 태그
+	일반 태그:수도 클래스는 class의 우선순위로 잡힘
+*/
