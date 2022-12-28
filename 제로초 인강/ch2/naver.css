@@ -154,7 +154,4 @@ nav li:nth-child(6) span:first-child {
 	background-position: -70px -285px;
 }
 
-/* css 선택자 우선순위
-	id > class > 일반 태그
-	일반 태그:수도 클래스는 class의 우선순위로 잡힘
-*/
+/* 블록 서식 맥락은 부모 태그가 자식 태그를 감쌀 수 있는 경우를 뜻함*/
