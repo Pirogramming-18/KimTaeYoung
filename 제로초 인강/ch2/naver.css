@@ -29,7 +29,7 @@
 	/*background-image: url(./sp_search.png);*/
 	/*background-position: -4px -10px;*/
 	/*background-repeat: no-repeat;*/
-	background: url(./sp_search.png) -4px -4px no-repeat;
+	background: url(./naver_logo.png) -4px -4px no-repeat;
 	vertical-align: middle;
 	position: relative;
 	top: -6px;
@@ -65,6 +65,7 @@
 	vertical-align: top;
 	width: 405px;
 	height: 23px;
+	display: "intline-block";
 }
 
 #header-search fieldset button {
@@ -79,7 +80,7 @@
 }
 
 #search-image {
-	background-image: url(./sp_search.png);
+	background-image: url(./naver_logo.png);
 	background-position: -3px -60px;
 	background-repeat: no-repeat;
 	width: 21px;
