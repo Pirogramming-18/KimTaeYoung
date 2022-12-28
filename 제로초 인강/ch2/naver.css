@@ -294,6 +294,31 @@ nav ul {
 	height: 20px;
 }
 
+#ranking-head {
+	display: inline-block;
+}
+
+#ranking-head1 {
+	float: left;
+}
+#ranking-head2 {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#real-ranking {
+}
+
+#divide-ranking {
+}
+
+#divide-ranking div {
+}
+
+#ranking-etc {
+}
+
 #search-ranking ul {
 	display: none;
 	list-style: none;
@@ -473,3 +498,8 @@ main {
 #main-newsstand ul {
 	display: inline-block;
 }
+
+/* 쌓임 맥락 설명
+보통 z-index가 클수록 큼
+아무리 자식의 z-index가 높아도 부모보다 z-index가 더 높은 경우를 이길 수 없음 
+*/
