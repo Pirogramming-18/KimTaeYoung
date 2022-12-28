@@ -1,0 +1,150 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Nanum Gothic", sans-serif;
+}
+
+header ul {
+	list-style: none;
+}
+
+main {
+	background-color: black;
+	display: flex;
+	vertical-align: middle;
+	justify-content: space-evenly;
+	text-align: center;
+	height: 510px;
+	align-items: center;
+}
+
+header {
+	background-color: black;
+	display: flex;
+	vertical-align: middle;
+	height: 100px;
+}
+header li {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+header a {
+	text-decoration: none;
+}
+
+.list {
+	color: white;
+	float: left;
+	vertical-align: middle;
+	width: 800px;
+	padding: 10 10 10 200px;
+	margin: 0;
+}
+
+.search-list {
+	color: white;
+	float: right;
+	top: 0px;
+	right: 0px;
+	margin-left: 260px;
+	width: 300px;
+	margin-top: 40px;
+}
+
+.search-list input {
+	border-radius: 7px;
+	padding: 11px 15px 11px 0px;
+	background-color: gray;
+}
+
+.search-list input:focus {
+	border-radius: 7px;
+	padding: 11px 15px 11px 0px;
+	background-color: skyblue;
+}
+
+.search-list button {
+	border-radius: 4px;
+	background-color: gray;
+	padding: 6px 6px 6px 6px;
+	border: 1px solid #e8e8e8;
+	cursor: pointer;
+}
+
+.search-list button span {
+	color: white;
+}
+
+.introduction {
+	float: left;
+}
+
+.introduction span {
+	color: white;
+	font-size: 50px;
+	text-align: left;
+	display: block;
+}
+.introduction p {
+	color: gray;
+}
+
+.sign-up {
+	float: right;
+	font-size: 24px;
+	background-color: white;
+	padding: 25px 25px;
+	/*padding과 margin의 차이 padding 요소 안에 여백 넣을 때 margin은 바깥에 넣을 때*/
+	border-radius: 10px;
+}
+
+main p {
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.sign-up input {
+	display: inline-block;
+	border-radius: 5px;
+	margin: 0;
+	padding: 11px 138px 6px 9px;
+	border: 1px solid #e8e8e8;
+}
+.sign-up input:focus {
+	display: inline-block;
+	border-radius: 5px;
+	margin: 0;
+	padding: 11px 138px 6px 9px;
+	border: 1px solid #e8e8e8;
+	background-color: skyblue;
+}
+
+.small-font p {
+	font-size: 8px;
+	margin-bottom: 5px;
+}
+
+.small-font button {
+	border-radius: 5px;
+	padding: 10px 100px;
+	background-color: #03cf5d;
+	border: 2px solid #03cf5d;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+.sign-up > p {
+	font-size: 14px;
+}
+
+footer {
+	height: 120px;
+}
+
+footer img {
+	position: relative;
+	top: -37px;
+	right: -500px;
+}
