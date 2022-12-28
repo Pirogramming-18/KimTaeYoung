@@ -302,12 +302,75 @@ nav li.more:first-child span:first-child {
 }
 
 main {
-	background-color:gainsboro;
-	display:inline-block;
-	width:100%;
+	background-color: gainsboro;
+	display: inline-block;
+	width: 100%;
 }
 
+#main-ad {
+	display: inline-block;
+	width: 740px;
+	height: 120px;
+	background-color: black;
+}
 
-/* 마진 겹침 해결법
-1. flat: left width:100%
-2. display: inline-block width: 100%<- 어떠한 경우에도 가능/
+#main-login {
+	display: inline-block;
+	width: 332px;
+	height: 120px;
+	vertical-align: top;
+	background-color: white;
+}
+
+#main-ytn {
+	display: inline-block;
+	width: 740px;
+	height: 46px;
+}
+
+#main-newsstand {
+	display: inline-block;
+	width: 740px;
+	height: 246px;
+}
+
+#main-weather {
+	display: inline-block;
+	width: 332px;
+	height: 142px;
+	vertical-align: top;
+}
+
+#main-second-ad {
+	display: inline-block;
+	width: 332px;
+	height: 150px;
+	background: black;
+}
+
+#main-category {
+	display: inline-block;
+	width: 740px;
+	height: 837px;
+	background: red;
+}
+#main-shopping {
+	display: inline-block;
+	width: 332px;
+	height: 837px;
+	background: blue;
+}
+
+#main-event {
+	display: inline-block;
+	width: 332px;
+	height: 130px;
+	background: #ccc;
+	vertical-align: top;
+}
+#main-third-ad {
+	display: inline-block;
+	width: 332px;
+	height: 130px;
+	background: #ccc;
+}
