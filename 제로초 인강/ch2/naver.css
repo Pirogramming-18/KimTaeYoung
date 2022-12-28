@@ -644,14 +644,7 @@ section {
 	border: 1px solid #dee3eb;
 }
 
-/* white-space
-white-space:nowrap
-overflow:hidden을 이용해서 한줄로 만들 수 있음
-*/
-/* font-weight는 글자 굵기 조절 기본 400*/
-/* opacity
-	불투명도
-	0~1
-	쌓임맥락 형성
-	위치에 따라 투명도가 변하는 건 gradient
-*/
+/* css가 과하게 길어지면 파일을 나누는 것도 괜찮음
+head 내의 style과 css 링크 간의 우선 순위는 차이가 남
+validator.w3.org 웹 표준 검사기
+ */
