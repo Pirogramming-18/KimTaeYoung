@@ -1,0 +1,50 @@
+@import "./reset.css";
+
+#Pirogramming {
+	height: 100vh;
+	text-align: center;
+}
+
+#top-toggler {
+	border: 0.1px solid gray;
+}
+
+#intro button {
+	border-radius: 4px;
+	border: 1px solid gray;
+}
+
+#intro {
+	height: 100vh;
+	text-align: center;
+}
+
+#Hightlights {
+	text-align: center;
+}
+
+#icons i {
+	font-size: 10rem;
+}
+
+#photos #col {
+	margin-bottom: 3rem;
+}
+
+#Contact {
+	padding: 2rem 5rem 5rem 5rem;
+}
+
+#Contact input {
+	border-radius: 0.3rem;
+	margin-top: 1rem;
+}
+
+.nav-item a {
+	color: #fff;
+	font-weight: 600;
+}
+
+.nav-item a:hover {
+	color: gray;
+}
