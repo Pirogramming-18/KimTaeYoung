@@ -48,3 +48,20 @@
 .nav-item a:hover {
 	color: gray;
 }
+
+h6 {
+	line-height: normal;
+}
+
+#send p {
+	color: gray;
+}
+
+footer #col {
+	padding: 0 0 2rem 0;
+	font-weight: 800;
+}
+
+footer #col h6:first-child {
+	color: #5bc0de;
+}

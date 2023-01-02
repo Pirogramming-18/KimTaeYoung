@@ -18,6 +18,28 @@
     </div>
   </div>
 </div>
+
+<!-- send -->
+<div class="modal fade fw-bold" id="send" tabindex="-1" aria-labelledby="send" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header d-flex justify-content-center">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Nice-Job!</h1>
+      </div>
+      <div class="modal-body text-center">
+        <h6>you clicked the button but it doesn't</h6>
+				<h6>actually go anywhere</h6>
+
+				<p class="my-4" >learn more at Bootstrap</p>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button type="button" class="btn btn-primary pd-5" style = "padding: 0.5rem 14rem" data-bs-dismiss="modal">ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -173,25 +195,26 @@
 		</section>
     </section>
 
-		<section id="Contact" class = "container-fluid bg-secondary" >
+		<section id="Contact" class = "container-fluid bg-secondary">
       <div class="justify-content-between text-center">
         <div class="row row-cols-1 row-cols-lg-3">
-          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="Password"></div>
-          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="Password"></div>
-          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="Password"></div>
+          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="name"></div>
+          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="email"></div>
+          <div id="col"><input type="password" class="form-control" id="inputPassword2" placeholder="phone"></div>
         </div>
         <div class="row mt-4">
           <div id="col">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" placeholder="Your messages here"></textarea>
           </div>
         </div>
+				<button type="button" class="btn btn-primary mt-4 px-5" data-bs-toggle="modal" data-bs-target="#send">send</button>
 
       </div>
     </section>
 
 
 		<footer class = "container-fluid bg-dark text-white">
-			<div class="row row-cols-1 row-cols-sm-3 p-5">
+			<div class="row row-cols-1 row-cols-sm-1 p-5">
 				<div id="col">
 					<h6>Information</h6>
 					<h6>Product</h6>
@@ -208,7 +231,8 @@
 				</div>
 				<div id="col">
 					<h6>Stay Posted</h6>
-					
+					<input type="text" class="form-control w-75" placeholder="Tell me your email">
+					<button type="button" class="btn btn-primary mt-2 px-2" data-bs-toggle="modal" data-bs-target="#send">Subscribe for updates</button>
 				</div>
 			</div>
 			
