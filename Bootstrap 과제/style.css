@@ -110,4 +110,7 @@ footer #col h6:first-child {
 	transition: 0.3s;
 }
 
+#body .collapse {
+	transition: 3s;
+}
 /* css 우선순위 이용*/
