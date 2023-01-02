@@ -1,8 +1,13 @@
 @import "./reset.css";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 #Pirogramming {
 	height: 100vh;
 	text-align: center;
+}
+
+button {
+	transition: 0.3s;
 }
 
 #top-toggler {
@@ -41,12 +46,13 @@
 }
 
 .nav-item a {
-	color: #fff;
+	color: gray;
 	font-weight: 600;
+	transition: 0.3s;
 }
 
 .nav-item a:hover {
-	color: gray;
+	color: #f7f7f7;
 }
 
 h6 {
@@ -65,3 +71,43 @@ footer #col {
 footer #col h6:first-child {
 	color: #5bc0de;
 }
+
+.bi-list {
+	font-size: 1.5rem;
+	font-weight: bolder;
+}
+
+.modal-title {
+	font-weight: bolder;
+}
+.modal-body {
+	font-weight: bolder;
+}
+
+#icons hr {
+	margin-left: auto;
+	margin-right: auto;
+	width: 88%;
+}
+
+#about-button:hover {
+	background-color: #292b2c;
+}
+
+/* #about-button {
+	transition: 0.3s;
+}
+
+#about button {
+	transition: 0.3s;
+}
+
+#footer button {
+	transition: 0.3s;
+} */
+
+#body button {
+	transition: 0.3s;
+}
+
+/* css 우선순위 이용*/
