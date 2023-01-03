@@ -6,6 +6,7 @@ function loadItems() {
 
 function displayItems(items) {
 	const container = document.querySelector(".items");
+
 	container.innerHTML = items.map((item) => creatHTMLString(item)).join("");
 }
 
@@ -18,10 +19,29 @@ function creatHTMLString(item) {
   `;
 }
 
+function onButtonClick(e, items) {
+	const dataset = e.target.dataset;
+	const key = dataset.key;
+	const value = dataset.value;
+	console.log(dataset);
+	if (key == null || value == null) {
+		return;
+	}
+
+	displayItems(items.filter((item) => item[key] == value));
+}
+
+function setEventListeners(items) {
+	const logo = document.querySelector(".logo");
+	const buttons = document.querySelector(".buttons");
+	logo.addEventListener("click", () => displayItems(items));
+	console.log(buttons);
+	buttons.addEventListener("click", (e) => onButtonClick(e, items));
+}
+
 loadItems()
 	.then((items) => {
-		console.log(items);
 		displayItems(items);
-		// setEventListeners(items);
+		setEventListeners(items);
 	})
 	.catch(console.log);
