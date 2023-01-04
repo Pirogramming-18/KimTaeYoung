@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			body {
+				height: 100vh;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+			}
+			.box {
+				width: 200px;
+				height: 200px;
+			}
+			.timerBox {
+				width: 200px;
+				outline: 2px solid black;
+			}
+			.timerBox .time {
+				font-size: 30pt;
+				color: #4c4c4c;
+				text-align: center;
+				font-family: sans-serif;
+			}
+			.btnBox {
+				margin: 20px auto;
+				text-align: center;
+			}
+			.btnBox .fa {
+				margin: 0px 5px;
+				font-size: 30pt;
+				color: #faed7d;
+				cursor: pointer;
+			}
+			.record {
+				text-align: center;
+			}
+			.record input {
+				margin-right: 50px;
+			}
+			#record-list li {
+				display: flex;
+				width: 50%;
+				justify-content: space-between;
+				margin-bottom: 5px;
+			}
+		</style>
+		<link
+			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+			rel="stylesheet"
+			integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+			crossorigin="anonymous"
+		/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./reset.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="box" class="box">
+			<div id="timerBox" class="timerBox">
+				<div id="time"><span id="sec">00</span>:<span id="mili">00</span></div>
+			</div>
+			<div class="btnBox">
+				<button id="startbtn">start</button>
+				<button id="stopbtn">stop</button>
+				<button id="resetbtn">reset</button>
+			</div>
+			<div class="record" style="display: flex; justify-content: space-between">
+				<input id="whole" type="checkbox" />
+				<span></span>
+				<button id="delete">delete</button>
+			</div>
+			<hr />
+			<ul id="record-list"></ul>
+		</div>
+
+		<script>
+			const startBtn = document.querySelector("#startbtn");
+			const resetBtn = document.querySelector("#resetbtn");
+			const stopBtn = document.querySelector("#stopbtn");
+			const deleteBtn = document.querySelector("#delete");
+
+			const now = document.querySelector("#time");
+			const mili = document.querySelector("#mili");
+			const sec = document.querySelector("#sec");
+			const recordList = document.querySelector("#record-list");
+			const wholeCheck = document.querySelector("#whole");
+
+			let time;
+			let intervalid;
+			let starTime = 0;
+			let endTime = 0;
+			let startFlag = 0;
+			let stopFlag = 0;
+			let term = 0;
+
+			function addZero(numbers) {
+				return numbers < 10 ? `0${numbers}` : numbers;
+			}
+
+			startBtn.addEventListener("click", () => {
+				clearInterval(intervalid); // 시작 버튼 다시 누르는 경우 버그 방지
+
+				if (startFlag == 0) {
+					startFlag = 1;
+					startTime = Date.now();
+				} else if (startFlag == 1 && stopFlag == 1) {
+					stopFlag = 0;
+					startTime += Date.now() - term;
+				}
+
+				intervalid = setInterval(() => {
+					time = new Date(Date.now() - startTime);
+					sec.textContent = addZero(time.getSeconds());
+					mili.textContent = addZero(Math.floor(time.getMilliseconds() / 10));
+				}, 1);
+			});
+
+			resetBtn.addEventListener("click", () => {
+				clearInterval(intervalid);
+				startFlag = 0;
+				startTime = 0;
+				sec.textContent = "00";
+				mili.textContent = "00";
+				term = 0;
+			});
+
+			stopBtn.addEventListener("click", () => {
+				clearInterval(intervalid);
+				term = Date.now();
+				stopFlag = 1;
+				const recordList = document.querySelector("#record-list");
+				const newList = document.createElement("li");
+				newList.innerHTML = `<input type="checkbox" class="check" /><span>${now.innerHTML}</span>`;
+				recordList.appendChild(newList);
+			});
+
+			wholeCheck.addEventListener("change", () => {
+				const checkBoxes = document.querySelectorAll(".check");
+				if (wholeCheck.checked) {
+					checkBoxes.forEach((checkBoxe) => {
+						if (!checkBoxe.checked) checkBoxe.checked = true;
+					});
+				} else {
+					checkBoxes.forEach((checkBoxe) => {
+						if (checkBoxe.checked) checkBoxe.checked = false;
+					});
+				}
+			});
+
+			deleteBtn.addEventListener("click", () => {
+				const lists = document.querySelectorAll("li");
+				lists.forEach((list) => {
+					const checkBoxe = list.firstChild;
+					if (checkBoxe.checked) list.parentNode.removeChild(list);
+				});
+			});
+		</script>
+	</body>
+</html>
