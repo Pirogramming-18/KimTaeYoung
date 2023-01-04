@@ -126,14 +126,14 @@
 			});
 
 			stopBtn.addEventListener("click", () => {
-				if (stopFlag) return;
 				clearInterval(intervalid);
 				term = Date.now();
-				stopFlag = 1;
+				if (stopFlag) return;
 				const recordList = document.querySelector("#record-list");
 				const newList = document.createElement("li");
 				newList.innerHTML = `<input type="checkbox" class="check" /><span>${now.innerHTML}</span>`;
 				recordList.appendChild(newList);
+				stopFlag = 1;
 			});
 
 			wholeCheck.addEventListener("change", () => {
