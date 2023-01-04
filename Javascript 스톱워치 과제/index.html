@@ -16,22 +16,17 @@
 			.timerBox {
 				width: 200px;
 				outline: 2px solid black;
+				text-align: center;
 			}
 			.timerBox .time {
 				font-size: 30pt;
 				color: #4c4c4c;
-				text-align: center;
 				font-family: sans-serif;
 			}
 			.btnBox {
+				display: flex;
 				margin: 20px auto;
-				text-align: center;
-			}
-			.btnBox .fa {
-				margin: 0px 5px;
-				font-size: 30pt;
-				color: #faed7d;
-				cursor: pointer;
+				justify-content: space-around;
 			}
 			.record {
 				text-align: center;
@@ -46,19 +41,17 @@
 				margin-bottom: 5px;
 			}
 		</style>
-		<link
-			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-			rel="stylesheet"
-			integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-			crossorigin="anonymous"
-		/>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./reset.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+		/>
 		<title>Document</title>
 	</head>
+	
 	<body>
 		<div id="box" class="box">
 			<div id="timerBox" class="timerBox">
