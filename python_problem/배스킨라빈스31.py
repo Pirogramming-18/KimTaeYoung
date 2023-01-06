@@ -25,4 +25,4 @@ while 1:
   if num == 31:
     break
 
-  isPlayer1Turn = ~isPlayer1Turn
+  isPlayer1Turn = not isPlayer1Turn
