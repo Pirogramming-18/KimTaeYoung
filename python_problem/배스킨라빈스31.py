@@ -1,13 +1,20 @@
+import random
+
+
 
 
 num = 0
 isPlayer1Turn = True
 
+
+
+
+
 def brGame():
   global num
   global isPlayer1Turn
-  player1 = "playerA"
-  player2 = "playerB"
+  player1 = "player"
+  player2 = "computer"
   
 
   if isPlayer1Turn:
