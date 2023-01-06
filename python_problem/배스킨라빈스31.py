@@ -1,4 +1,4 @@
-import random
+
 
 num = 0
 isPlayer1Turn = True
