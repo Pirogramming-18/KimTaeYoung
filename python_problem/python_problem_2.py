@@ -50,14 +50,15 @@ def Menu3():
 
 
 ##############  menu 4
-def Menu4(name):
+def Menu4(name, graded_num):
     student_list.remove(name)
-
+    graded_num -= 1
     student_check[name] = 0
     student_score[name].clear()
     grade[name] = ""
     print(f'{name} student information is delted.')
 
+    return graded_num
 
 
 print("*Menu*******************************")
@@ -118,7 +119,8 @@ while True :
 
     elif choice == "4" :
 
-        print(student_list)
+        
+        
 
         if len(student_list) == 0:
             print("No student data!")
@@ -126,7 +128,7 @@ while True :
         
         student_input = input("Enter the name to delete :").strip() 
         if (student_check[student_input] == 1):
-            Menu4(student_input)
+            graded_num = Menu4(student_input, graded_num)
         
         else:
             print("Not exist name!")
