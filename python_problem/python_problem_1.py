@@ -9,7 +9,7 @@ isPlayerTurn = True
 def brGame():
   global num
   global isPlayerTurn
-
+  
   try:
     call = int(input("부를 숫자의 개수를 입력하세요(1, 2, 3만 입력 가능) :"))
   except ValueError:
@@ -27,7 +27,7 @@ def brGame():
       
       print(f'{player2} win!') if isPlayerTurn == True else print(f'{player1} win!')
       return
-
+  isPlayerTurn = not isPlayerTurn
 
 while 1:
 
@@ -36,6 +36,6 @@ while 1:
   if num == 31:
     break
 
-  isPlayerTurn = not isPlayerTurn
+  
   
   
