@@ -14,5 +14,7 @@ while 1:
     print("1,2,3 중 하나를 입력하세요")
     continue
   
- 
+  for _ in range(call):
+    num+= 1
+    print(f'{player1}: {num}')
 
