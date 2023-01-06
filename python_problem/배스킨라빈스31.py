@@ -6,8 +6,8 @@ isPlayer1Turn = True
 def brGame():
   global num
   global isPlayer1Turn
-  player1 = "player"
-  player2 = "computer"
+  player1 = "playerA"
+  player2 = "playerB"
   
 
   try:
