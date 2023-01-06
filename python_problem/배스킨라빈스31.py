@@ -28,4 +28,4 @@ while 1:
   
   
 
-  isPlayer1Turn = ~isPlayer1Turn
+  isPlayer1Turn = not isPlayer1Turn
