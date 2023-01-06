@@ -76,7 +76,7 @@ while True :
         try: 
             name, mid_score, final_score = input("Enter name mid-score final-score :").split()
         except:
-            print("Num of date is not 3!")
+            print("Num of data is not 3!")
             continue
             
         name = name.strip() # 공백 문제
@@ -92,7 +92,7 @@ while True :
         Menu1(name, mid_score, final_score)
 
     elif choice == "2" :
-        
+
         if len(student_list) == 0:
             print("No student data!")
             
@@ -117,12 +117,14 @@ while True :
             Menu3()
 
     elif choice == "4" :
+
         print(student_list)
+
         if len(student_list) == 0:
             print("No student data!")
             continue
         
-        student_input = input("Enter the name to delte :").strip() 
+        student_input = input("Enter the name to delete :").strip() 
         if (student_check[student_input] == 1):
             Menu4(student_input)
         
@@ -131,7 +133,7 @@ while True :
             
 
     elif choice == "5" :
-        print("Exist Program!")
+        print("Exit Program!")
         break
 
     else :
