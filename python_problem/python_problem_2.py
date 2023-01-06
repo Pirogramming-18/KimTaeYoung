@@ -51,8 +51,12 @@ def Menu3():
 
 ##############  menu 4
 def Menu4(name, graded_num):
+    
+    if (grade[name]):
+        graded_num -= 1
+
     student_list.remove(name)
-    graded_num -= 1
+    
     student_check[name] = 0
     student_score[name].clear()
     grade[name] = ""
