@@ -2,7 +2,8 @@
 
 num = 0
 player1 = "PlayerA"
-
+player2 = "playerB"
+isPlayerTurn = True
 while 1:
 
   
@@ -19,8 +20,8 @@ while 1:
   for i in range(call):
     
     num += 1
-    print(f'{player1}: {num}') 
+    print(f'{player1}: {num}') if isPlayerTurn == True else print(f'{player2}: {num}')
   
-  
+  isPlayerTurn = not isPlayerTurn
   
   
