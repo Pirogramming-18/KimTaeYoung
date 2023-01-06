@@ -24,7 +24,7 @@ def Menu1(name, mid, final):
 def Menu2(name, graded_num):
     graded_num += 1
     
-    cur = student_score[name][0] + student_score[name][1] // 2
+    cur = (student_score[name][0] + student_score[name][1]) // 2
 
     if cur >= 90:
         grade[name] = 'A'
