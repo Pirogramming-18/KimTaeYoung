@@ -18,8 +18,11 @@ while 1:
   
   for _ in range(call):
     num+= 1
-    if 
+    if num == 31:
+      break
     print(f'{player1}: {num}') if isPlayer1Turn == True else print(f'{player2}: {num}')
 
+  if num == 31:
+    break
 
   isPlayer1Turn = ~isPlayer1Turn
