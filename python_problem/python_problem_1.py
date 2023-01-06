@@ -22,11 +22,13 @@ while 1:
     num += 1
     print(f'{player1}: {num}') if isPlayerTurn == True else print(f'{player2}: {num}')
     if num == 31:
+      
+      print(f'{player2} win!') if isPlayerTurn == True else print(f'{player1} win!')
       break
   if num == 31:
     break
   
-  
+
   isPlayerTurn = not isPlayerTurn
   
   
