@@ -69,7 +69,6 @@ print("4. Deleting students Info")
 print("5. Exit program")
 print("*************************************")
 while True :
-    
     choice = input("Choose menu 1, 2, 3, 4, 5 : ")
 
     if choice == "1":
