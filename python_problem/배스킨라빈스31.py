@@ -18,8 +18,8 @@ while 1:
   
   for _ in range(call):
     num+= 1
-  
+    
     print(f'{player1}: {num}') if isPlayer1Turn == True else print(f'{player2}: {num}')
 
 
-  isPlayer1Turn = ~isPlayer1Turn
+  isPlayer1Turn = not isPlayer1Turn
