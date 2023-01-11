@@ -1,4 +1,8 @@
 {% extends 'blog/base.html' %} {% block content %}
+
+{% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
 <div class="post">
 	{% if post.published_date %}
 	<div class="date">{{ post.published_date }}</div>
@@ -7,3 +11,5 @@
 	<p>{{ post.text|linebreaksbr }}</p>
 </div>
 {% endblock %}
+
+<!-- django 템플릿 태그는 indent를 반영하므로 prettier 사용을 자제하는 게 좋음 -->
