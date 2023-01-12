@@ -1,0 +1,12 @@
+{% extends 'review/base.html' %}
+
+<body>
+	{% block content %} {% for post in outlines %}
+	<div>
+		<h2><a href="/review/{{post.pk}}">{{post.title}}</a></h2>
+		<h4>개봉년도: {{post.released_year}}</h4>
+		<h4>장르: {{post.genre}}</h4>
+		<h4>별점: {{post.star_rating}}</h4>
+	</div>
+	{%endfor%} {% endblock %}
+</body>
