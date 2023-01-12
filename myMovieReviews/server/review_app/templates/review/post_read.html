@@ -1,0 +1,22 @@
+{% extends 'review/base.html' %} {% block content %}
+<h1>{{ post.title }}</h1>
+<small>개봉년도: {{ post.released_year }}</small>
+<br />
+<small>장르: {{ post.genre }}</small>
+<br />
+<small>감독: {{ post.director }}</small>
+<br />
+<small>배우: {{ post.actor }}</small>
+<br />
+<small>별점: {{ post.star_rating }}</small>
+<br />
+<br />
+<br />
+<p>{{ post.review }}</p>
+<br />
+<a href="/review/{{post.id}}/edit">수정</a>
+<form action="/review/{{post.id}}/delete" method="post">
+	{% csrf_token %}
+	<input type="submit" value="삭제" />
+</form>
+{% endblock %}

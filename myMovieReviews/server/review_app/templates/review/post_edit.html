@@ -1,0 +1,30 @@
+{% extends 'review/base.html' %} 
+{% block content %}
+<form action="/review/{{post.id}}/edit" method="post">
+	{% csrf_token %}
+	<input name="title" placeholder="이름" value ="{{post.title}}" />
+	<br />
+	<input name="released_year" , type="number" placeholder="개봉년도" value ="{{post.released_year}}"/>
+	<br />
+	<input name="genre" placeholder="장르" value ="{{post.genre}}"/>
+	<br />
+	<input name="director" placeholder="감독" value ="{{post.director}}" />
+	<br />
+	<input name="actor" placeholder="배우" value ="{{post.actor}}"/>
+	<br />
+	<input
+		name="star_rating"
+		placeholder="별점"
+		type="number"
+		min="0"
+		max="5"
+		step="0.1"
+		value ="{{post.star_rating}}"
+	/>
+	<br />
+	<textarea name="review" placeholder="리뷰 내용"></textarea>
+	<div>
+		<input type="submit" value="저장하기" />
+	</div>
+</form>
+{%endblock%}
