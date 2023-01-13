@@ -5,11 +5,18 @@
 	<br />
 	<input name="released_year" , type="number" placeholder="개봉년도" />
 	<br />
-	<input name="genre" placeholder="장르" />
+
+	<select name="genre">
+		{% for i in post.genre %} {{i}} {%endfor%}
+	</select>
+
 	<br />
+
 	<input name="director" placeholder="감독" />
 	<br />
 	<input name="actor" placeholder="배우" />
+	<br />
+	<input name="time" type="number" placeholder="러닝 타임" />
 	<br />
 	<input
 		name="star_rating"
@@ -22,7 +29,7 @@
 	<br />
 	<textarea name="review" placeholder="리뷰 내용"></textarea>
 	<div>
-		<input type="submit" value="저장하기" />
+		<input type="submit" value="저장" />
 	</div>
 </form>
 {%endblock%}

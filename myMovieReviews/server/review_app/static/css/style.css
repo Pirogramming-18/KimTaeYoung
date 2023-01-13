@@ -1,0 +1,7 @@
+a {
+	text-decoration: none !important;
+}
+
+#review_list {
+	display: flex;
+}

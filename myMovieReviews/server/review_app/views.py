@@ -1,30 +1,36 @@
 from django.shortcuts import render, redirect
 from .models import Post
+from .forms import PostForm
+from django import template
 # Create your views here.
 
 
 def movie_list(request):
-  post = Post.objects.all()
-
-  return render(request, "review/movie_list.html", {"outlines" : post})
+  post = Post.objects.all() 
+  hours = []
+  minutes = []
+  for i in post:
+    hours.append(i.time//60)
+    minutes.append(i.time%60)
+  return render(request, "review/movie_list.html", {"outlines" : post, "hours" : hours, "minutes": minutes})
 
 def post_create(request):
+  
   if request.method == "POST":
-    Post.objects.create(
-      title = request.POST["title"],
-      released_year = request.POST["released_year"],
-      star_rating = request.POST["star_rating"],
-      review = request.POST["review"],
-      director = request.POST["director"],
-      actor = request.POST["actor"]
-    )
+    post = PostForm(request.POST)
+    post.save()
+
     return redirect("/")
-  return render(request, "review/post_create.html")
+  else:
+    post = PostForm()
+  return render(request, "review/post_create.html", {"post" : post})
 
 def post_read(request, pk):
 
   post = Post.objects.all().get(id=pk)
-  return render(request, "review/post_read.html", {"post": post})
+  hour = post.time//60
+  minute = post.time%60
+  return render(request, "review/post_read.html", {"post": post, "hour": hour, "minute": minute})
 
 def post_delete(request, pk):
   if request.method == "POST":
@@ -34,14 +40,9 @@ def post_delete(request, pk):
 
 def post_edit(request, pk):
   post = Post.objects.get(id=pk)
-
+  form = PostForm(instance=post)
   if request.method == "POST":
-    post.title = request.POST["title"]
-    post.released_year = request.POST["released_year"]
-    post.star_rating = request.POST["star_rating"]
-    post.review = request.POST["review"]
-    post.director = request.POST["director"]
-    post.actor = request.POST["actor"]
-    post.save()
+    form = PostForm(request.POST, instance=post)
+    form.save()
     return redirect(f"/review/{post.id}")
-  return render(request, "review/post_edit.html", {"post" : post})
+  return render(request, "review/post_edit.html", {"post" : post, "form": form})

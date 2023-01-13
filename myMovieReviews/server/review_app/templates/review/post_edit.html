@@ -1,16 +1,29 @@
-{% extends 'review/base.html' %} 
-{% block content %}
+{% extends 'review/base.html' %} {% block content %}
 <form action="/review/{{post.id}}/edit" method="post">
 	{% csrf_token %}
-	<input name="title" placeholder="이름" value ="{{post.title}}" />
+	<input name="title" placeholder="이름" value="{{post.title}}" />
 	<br />
-	<input name="released_year" , type="number" placeholder="개봉년도" value ="{{post.released_year}}"/>
+	<input
+		name="released_year"
+		type="number"
+		placeholder="개봉년도"
+		value="{{post.released_year}}"
+	/>
 	<br />
-	<input name="genre" placeholder="장르" value ="{{post.genre}}"/>
+	<select name="genre">
+		{% for i in form.genre%} {{i}} {%endfor%}
+	</select>
 	<br />
-	<input name="director" placeholder="감독" value ="{{post.director}}" />
+	<input name="director" placeholder="감독" value="{{post.director}}" />
 	<br />
-	<input name="actor" placeholder="배우" value ="{{post.actor}}"/>
+	<input name="actor" placeholder="배우" value="{{post.actor}}" />
+	<br />
+	<input
+		name="time"
+		type="number"
+		placeholder="러닝 타임"
+		value="{{post.time}}"
+	/>
 	<br />
 	<input
 		name="star_rating"
@@ -19,12 +32,12 @@
 		min="0"
 		max="5"
 		step="0.1"
-		value ="{{post.star_rating}}"
+		value="{{post.star_rating}}"
 	/>
 	<br />
-	<textarea name="review" placeholder="리뷰 내용"></textarea>
+	<textarea name="review" placeholder="리뷰 내용">{{post.review}}</textarea>
 	<div>
-		<input type="submit" value="저장하기" />
+		<input type="submit" value="저장" />
 	</div>
 </form>
 {%endblock%}
