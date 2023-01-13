@@ -11,4 +11,5 @@
 러닝 타임 시간 단위 출력은 둘 다 함수 내에서 먼저 hour과 minute을 계산하여 render 함수의 context 인자로 넘겨주는 방식으로 했는데, 리스트 부분은 여러 배열의 인덱스를 요구했기 때문에 custom template filter를 적용해 forloop.counter0를 인덱스로 사용할 수 있도록 구현했습니다. 
 
 custom template filter 링크: https://stackoverflow.com/questions/4651172/reference-list-item-by-index-within-django-template
+
 적용 방법: https://wayhome25.github.io/django/2017/06/22/custom-template-filter/
