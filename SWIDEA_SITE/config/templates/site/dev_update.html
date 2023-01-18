@@ -1,0 +1,24 @@
+{%extends 'site/main.html'%} {%block content%}
+<form action="{% url 'apps:dev_update' tool.id %}" method="post">
+	{% csrf_token %}
+	<div class="tool-register container-fluid d-flex flex-column align-items-center justify-content-between"">
+		<h2>DevTool Detail Update</h2>
+		<h6>
+			개발툴 등록 페이지입니다. 자신이 다룰 수 있는 개발툴을 등록해 보세요
+		</h6>
+		
+		<h6>이름:</h6>
+		{{form.name}}
+
+		<h6>종류:</h6>
+		{{form.classification}}
+		<h6>개발툴 설명:</h6>
+
+
+{{form.content}}
+	
+
+		<input type="submit" value="submit" />
+	</div>
+</form>
+{%endblock content%}

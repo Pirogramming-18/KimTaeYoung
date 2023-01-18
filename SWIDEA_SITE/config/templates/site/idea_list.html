@@ -1,0 +1,39 @@
+{%extends 'site/main.html'%} {%block content%}
+<div id="ideas">
+	<h1>idea List</h1>
+	<h6>나의 아이디어를 잊지말고 기록해보세요</h6>
+
+	<form action="{%url 'apps:idea_list'%}" method="get">
+		{% csrf_token %}
+		<select name="order" id="order_by" onChange="form.submit();">
+			<option value=""></option>
+			<option value="">찜많은순</option>
+			<option value="id">등록순</option>
+			<option value="-update_at">최신순</option>
+			<option value="name">이름순</option>
+		</select>
+	</form>
+	<div class="idea-list container-fluid">
+		<div class="row row-cols-5 m-3 d-flex justify-content-center">
+			{%for idea in ideas%}
+			<div class="col m-1 idea">
+				{% if idea.image %}
+				<p>
+					<img src="{{ idea.image.url }}" />
+				</p>
+				{%else%}
+				<div class="default p-5"></div>
+				{% endif %}
+				<h3><a href="{% url 'apps:idea_detail' idea.pk%}">{{idea.name}}</a></h3>
+				<hr />
+				<div class="">
+					<span>예상 개발 툴:{{idea.dev_tool}}</span>
+					<br />
+					<span>아이디어 관심도:{{idea.interest_degree}}</span>
+				</div>
+			</div>
+			{%endfor%}
+		</div>
+	</div>
+</div>
+{%endblock content%}

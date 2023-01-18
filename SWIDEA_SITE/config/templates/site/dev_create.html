@@ -1,0 +1,23 @@
+{%extends 'site/main.html'%} {%block content%}
+<form action="{% url 'apps:dev_create' %}" method="post">
+	{% csrf_token %}
+	<div
+		class="tool-register container-fluid d-flex flex-column align-items-center justify-content-between"
+	>
+		<h2>DevTool Register</h2>
+		<h7>
+			개발툴 등록 페이지입니다. 자신이 다룰 수 있는 개발툴을 등록해 보세요
+		</h7>
+		<h3>이름:</h3>
+		<input type="text" name="name" />
+
+		<h3>종류:</h3>
+		<input type="text" name="classification" />
+		<h3>개발툴 설명:</h3>
+
+		<textarea name="content" id="" cols="30" rows="10"></textarea>
+
+		<input type="submit" value="submit" />
+	</div>
+</form>
+{%endblock content%}
