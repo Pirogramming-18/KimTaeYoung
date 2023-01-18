@@ -1,0 +1,27 @@
+{%extends 'site/main.html'%} {%block content%}
+<form
+	action="{% url 'apps:create_idea' %}"
+	method="post"
+	enctype="multipart/form-data"
+>
+	{% csrf_token %}
+	<div class="idea-register container-fluid d-flex flex-column align-items-center justify-content-between">
+		<h1>idea register</h1>
+		<h6>아이디어 등록 페이지입니다. 당신의 아이디어를 잊지말고 기록하세요</h6>
+		<div class=""></div>
+		<h6>아이디어명:</h6>
+		<input type="text" name="name" />
+		
+			<h6>Image:</h6>
+			<input type="file" name="image" />
+			<h6>아이디어 설명:</h6>
+			<textarea name="content" id="" cols="30" rows="10"></textarea>
+			<h6>아이디어 관심도:</h6>
+			{{form.interest_degree}}
+			<h6>예상 개발 툴:</h6>
+			{{form.dev_tool}}
+			<input type="submit" value="submit" />
+		</div>
+	</div>
+</form>
+{%endblock content%}

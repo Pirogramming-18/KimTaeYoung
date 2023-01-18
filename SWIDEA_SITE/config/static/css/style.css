@@ -1,0 +1,57 @@
+body #body {
+	text-decoration: none;
+	position: relative;
+}
+
+.dev-content h6 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-break: break-all;
+	width: 1000px;
+	height: 20px;
+}
+
+#main-bg {
+	position: relative;
+	z-index: 1;
+	height: 75vh;
+	font-size: 0.7rem;
+}
+
+nav {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 8vh;
+	font-size: 0.5rem;
+}
+
+nav h1 {
+	font-size: 2rem;
+}
+
+.idea {
+	width: auto;
+	height: auto;
+	background: skyblue;
+}
+
+.default {
+	width: 20%;
+	height: 30%;
+}
+
+.idea p img {
+	width: 100%;
+	height: 100%;
+}
+
+.idea p {
+	margin: 0.7rem 0.1rem;
+}
+
+.idea-list {
+	display: flex;
+	flex-wrap: wrap;
+}

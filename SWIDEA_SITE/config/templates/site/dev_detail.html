@@ -1,0 +1,43 @@
+{%extends 'site/main.html'%} {%block content%}
+<div id="idea-detail">
+	<h2>DevTool Detail</h2>
+	<h6>
+		개발 툴 세부내용 페이지입니다. 자신이 다를 수 있는 개발툴에 대한 상세내용을
+		확인해 보아요.
+	</h6>
+	<div class="tool-content">
+		<div><h6>{{detail.name}}</h6></div>
+		<div>
+			<p>{{detail.classification}}</p>
+			<p>{{detail.content}}</p>
+		</div>
+		<div>
+			<h6>만들 수 있는 SW 목록</h6>
+			{% for idea in all_idea%}
+			<h6><a href="{%url 'apps:idea_detail' idea.pk%}">{{idea.name}}</a></h6>
+			{%endfor%}
+		</div>
+	</div>
+
+	<div>
+		<div class="d-flex justify-content-center">
+			<div class="me-5">
+				<form action="{% url 'apps:dev_delete' detail.pk%}" method="post">
+					{% csrf_token %}
+					<input type="submit" value="삭제" />
+				</form>
+			</div>
+			<form action="{% url 'apps:dev_list'%}">
+				<input type="submit" value="목록" />
+			</form>
+
+			<div class="ms-5">
+				<form action="{% url 'apps:dev_update' detail.pk%}">
+					<input type="submit" value="수정" />
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{%endblock content%}
