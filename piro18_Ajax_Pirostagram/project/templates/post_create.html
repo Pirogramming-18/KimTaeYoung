@@ -1,0 +1,10 @@
+{% extends 'main.html' %} {%block content %}
+
+<form action="" method="post">
+	{% csrf_token %}
+
+	<div>{{form.as_p}}</div>
+	<input type="submit" value="작성" />
+</form>
+
+{% endblock%}

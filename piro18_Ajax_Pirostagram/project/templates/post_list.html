@@ -1,0 +1,7 @@
+{% extends 'main.html' %} {% block content %} {% for post in posts %}
+<div>
+	<a href="{% url 'post_read' post.id %}">{{post.title}}</a>
+</div>
+
+<br />
+{% endfor %} {% endblock%}
