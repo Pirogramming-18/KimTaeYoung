@@ -1,0 +1,120 @@
+{% extends 'main.html' %} {%block content %}
+<span>{{post.title}}</span>
+<p>{{post.content}}</p>
+{% if post.like == 0 %}
+<div id="like" onclick="changeLike(0, {{post.id}})">
+	<i class="bi bi-star"></i>
+</div>
+{% else %}
+<div id="like" onclick="changeLike(1, {{post.id}})">
+	<i class="bi bi-star-fill"></i>
+</div>
+{%endif%}
+
+<textarea
+	name="content"
+	id="content"
+	cols="30"
+	rows="10"
+	onkeyup="printName()"
+></textarea>
+
+<input type="submit" value="작성" onclick="addComment({{post.id}}, 'd')" />
+
+<div class="comment_table">
+	{% for comment in comments %}
+	<div class="comment-id-{{comment.id}}">
+		<input type="submit" value="삭제" onclick="deleteComment({{comment.id}})" />
+		<p>{{comment.content}}</p>
+	</div>
+	{% endfor %}
+</div>
+
+{% endblock %} {% block extra %}
+<script>
+	function printName() {
+		const name = document.getElementById("content").value;
+		document.getElementById("content").innerText = name;
+	}
+	const requestComment = new XMLHttpRequest();
+	const requestLike = new XMLHttpRequest();
+
+	const addComment = (id, content) => {
+		const url = "/comment_create";
+		let incontent = document.getElementById("content").innerHTML;
+		requestComment.open("POST", url, true);
+		requestComment.setRequestHeader(
+			"Content-Type",
+			"application/x-www-form-urlencoded"
+		);
+		requestComment.send(JSON.stringify({ id: id, content: incontent }));
+
+		return false;
+	};
+
+	const deleteComment = (id) => {
+		const url = "/comment_delete";
+		requestComment.open("POST", url, true);
+		requestComment.setRequestHeader(
+			"Content-Type",
+			"application/x-www-form-urlencoded"
+		);
+		requestComment.send(JSON.stringify({ id: id }));
+
+		return false;
+	};
+
+	// view에 현재 status 보내서 0이면 1로 1이면 0으로 바꿔서 그 값을 다시 반환
+
+	const changeLike = (status, id) => {
+		const url = "/change_like";
+
+		requestLike.open("POST", url, true);
+		requestLike.setRequestHeader(
+			"Content-Type",
+			"application/x-www-form-urlencoded"
+		);
+		requestLike.send(JSON.stringify({ status: status, id: id }));
+	};
+
+	requestLike.onreadystatechange = () => {
+		if (requestLike.readyState == XMLHttpRequest.DONE) {
+			if (requestLike.status < 400) {
+				const { status, id } = JSON.parse(requestLike.response);
+				console.log(status);
+				if (status == false) {
+					const star = document.getElementById("like");
+					star.setAttribute("onclick", `changeLike(0, ${id})`);
+					star.innerHTML = `<i class="bi bi-star">`;
+				} else {
+					const star = document.getElementById("like");
+					star.setAttribute("onclick", `changeLike(1, ${id})`);
+					star.innerHTML = `<i class="bi bi-star-fill">`;
+				}
+			}
+		}
+	};
+	requestComment.onreadystatechange = () => {
+		if (requestComment.readyState == XMLHttpRequest.DONE) {
+			if (requestComment.status < 400) {
+				const { post_id, comment_id, content, status } = JSON.parse(
+					requestComment.response
+				);
+				if (status == 1) {
+					const element = document.createElement("div");
+					element.classList.add(`comment-id-${comment_id}`);
+					element.innerHTML = `
+          <input type="submit" value="삭제" onclick="deleteComment(${comment_id})" /><p>${content}<p>`;
+
+					document.querySelector(".comment_table").appendChild(element);
+				} else {
+					const element = document.querySelector(
+						`.comment_table .comment-id-${comment_id}`
+					);
+					element.remove();
+				}
+			}
+		}
+	};
+</script>
+{%endblock%}
